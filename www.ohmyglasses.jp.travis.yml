@@ -1,3 +1,9 @@
+# url: http://www.ohmyglasses.jp
+# repository: omitted
+# ref: omitted
+# memo:
+#   - rails
+#   - spree
 language: ruby
 rvm:
   - 1.9.3
