@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 1.9.3
+env:
+  - DB=mysql
+before_script:
+  - cp config/database.yml.example config/database.yml
+  - cp config/settings.yml.example config/settings.yml
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - "bundle exec rake db:create"
+  - "bundle exec rake db:schema:load"
+bundler_args: --deployment --without development production
+notifications:
+  email:
+    - notify@example.com
+script: "bundle exec rake spec"
