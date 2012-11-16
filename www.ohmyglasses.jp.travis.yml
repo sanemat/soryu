@@ -4,6 +4,7 @@
 # memo:
 #   - rails
 #   - spree
+#   - https://gist.github.com/4080033
 language: ruby
 rvm:
   - 1.9.3
