@@ -20,4 +20,4 @@ bundler_args: --deployment --without development production
 notifications:
   email:
     - notify@example.com
-script: bundle exec rake spec
+script: bundle exec rspec -fd
