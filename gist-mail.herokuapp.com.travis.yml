@@ -1,3 +1,8 @@
+# url: http://gist-mail.herokuapp.com
+# repository: https://github.com/sanemat/gist-mail
+# ref: 7000982634dd360469ab8bbfc1190d65f90f5ddb
+# memo:
+#   - railshackathon
 language: ruby
 rvm: 1.9.3
 bundler_args: --deployment --without development production
