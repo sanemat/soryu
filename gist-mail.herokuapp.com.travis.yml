@@ -1,12 +1,15 @@
 # url: http://gist-mail.herokuapp.com
 # repository: https://github.com/sanemat/gist-mail
-# ref: 7000982634dd360469ab8bbfc1190d65f90f5ddb
+# ref: 6907d65d12eebbbd1913ff1cb7e5c6cea6a1716c
 # memo:
 #   - railshackathon
 language: ruby
-rvm: 1.9.3
-bundler_args: --deployment --without development production
-before_install: gem update bundler
+rvm:
+  - 2.0.0
+bundler_args: --without development production
+before_install:
+  - gem update bundler
+  - sed -i -e "/ruby '2.0.0'/d" Gemfile
 before_script:
   - RAILS_ENV=test bundle exec rake db:create db:schema:load --quiet
   - export DISPLAY=:99.0
@@ -15,3 +18,6 @@ notifications:
   email:
     - notification@example.com
 script: bundle exec rspec -fd
+branches:
+  only:
+    - master
