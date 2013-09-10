@@ -1,0 +1,18 @@
+# url: http://starseeker.so
+# repository: https://raw.github.com/tricknotes/starseeker
+# ref: https://github.com/tricknotes/starseeker/blob/3976021a43530a943b0a2fea000d870e60f84e5d/.travis.yml
+# memo:
+#   - redis
+#   - mongodb
+language: ruby
+rvm:
+  - 2.0.0
+services:
+  - mongodb
+  - redis-server
+bundler_args: --without development:production --path vendor/bundle
+before_install:
+  - gem update bundler --no-rdoc --no-ri
+before_script:
+  - bundle exec rake db:create db:migrate
+script: bundle exec rake
