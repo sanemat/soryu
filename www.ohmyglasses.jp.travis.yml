@@ -25,3 +25,4 @@ script: bundle exec parallel_test -n 4 -t rspec spec
 branches:
   only:
     - master
+cache: bundler
