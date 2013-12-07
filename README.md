@@ -1,1 +1,1 @@
-- http://sanemat.github.com/soryu
+- http://sanemat.github.io/soryu/
